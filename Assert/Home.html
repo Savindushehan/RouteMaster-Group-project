@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RouteMaster</title>
     <style>
-
+       @font-face {
+        font-family: 'Roboto-Light'; /* Font family name */
+        src: url('/Fonts/Roboto-Light.ttf') format('truetype'); /* URL to your font file */
+        font-weight: normal;
+        font-style: italic;
+        }
         :root{
-            --div-color1:000000;
-            --div-color2:272702;
+            --div-color1:#000000;
+            --div-color2:#272702;
+            --div-color3:#07FAFA;
+            --div-color4:#FFFFFF;	
         }
         a{
             text-decoration: none;
@@ -32,15 +39,31 @@
             font-size:1rem;
             margin-right: 3rem;
             cursor: grab;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            outline: none;
+            font-family: 'Roboto-Light'; 
         }
 
         /* above css code is all page must include code.do not chnage this code.*/
 
-        h1{
-            text-align: center;
-            font-size: 3rem;
-            margin-top: 4rem;
-            color: var(--div-color2);
+        h1 {
+         margin-top: 4rem;
+        font-size: 80px;
+        color:var(--div-color4);
+        text-align: center;
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes glow {
+        from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+        }
+        to {
+            text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        }
         }
 
 
@@ -58,5 +81,47 @@
    <main>
     <h1>RouteMaster</h1>
    </main> 
+   <script>
+
+    var M1=document.getElementById("m1");
+    var M2=document.getElementById("m2");
+    var M3=document.getElementById("m3");
+    var M4=document.getElementById("m4");
+
+    M1.onmousemove=function(){
+      M1.style.backgroundColor="var(--div-color3)";
+      M1.style.color="var(--div-color4)";
+    }
+    M1.onmouseout=function(){
+      M1.style.backgroundColor="";
+      M1.style.color="var(--div-color1)";
+    }
+    M2.onmousemove=function(){
+      M2.style.backgroundColor="var(--div-color3)";
+      M2.style.color="var(--div-color4)";
+    }
+    M2.onmouseout=function(){
+      M2.style.backgroundColor="";
+      M2.style.color="var(--div-color1)";
+    }
+    M3.onmousemove=function(){
+      M3.style.backgroundColor="var(--div-color3)";
+      M3.style.color="var(--div-color4)";
+    }
+    M3.onmouseout=function(){
+      M3.style.backgroundColor="";
+      M3.style.color="var(--div-color1)";
+    }
+    M4.onmousemove=function(){
+      M4.style.backgroundColor="var(--div-color3)";
+      M4.style.color="var(--div-color4)";
+    }
+    M4.onmouseout=function(){
+      M4.style.backgroundColor="";
+      M4.style.color="var(--div-color1)";
+    }
+
+    /* Above javascript code must include all tha page.don't change the code.*/
+   </script>
 </body>
 </html>
