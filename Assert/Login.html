@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RouteMaster</title>
+    <style>
+         @font-face {
+        font-family: 'Roboto-Light'; /* Font family name */
+        src: url('/Fonts/Roboto-Light.ttf') format('truetype'); /* URL to your font file */
+        font-weight: normal;
+        font-style: italic;
+        }
+        :root{
+            --div-color1:#000000;
+            --div-color2:#272702;
+            --div-color3:#07FAFA;
+            --div-color4:#FFFFFF;	
+        }
+        a{
+            text-decoration: none;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: url(/Images/background.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+        }
+        .head{
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+        }
+        header h3{
+            color: var(--div-color1);
+            font-size:1rem;
+            margin-right: 3rem;
+            cursor: grab;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            outline: none;
+            font-family: 'Roboto-Light'; 
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <h3 id="m1">Home</h3>
+            <h3 id="m2">About</h3>
+            <h3 id="m3">Contact</h3>
+            <h3 id="m4">Login</h3>
+        </div>
+    </header>
+    <main>
+        <h1>Login</h1>
+        <form>
+            <div class="row1">
+            <h2>Username</h2>
+            <input type="text" placeholder="Username" name="usename" id="username">
+            <span id="s1">Can't empty</span>
+            </div>
+            <div class="row2">
+                <h2>Password</h2>
+                <input type="text" placeholder="Password" name="password" id="password">
+                <span id="s2">Can't empty</span>
+                <h4>Forgot Password</h4>
+                </div>
+                <button id="btn">Submt</button>
+                <h4 id="link">Or Create Account</h4>
+        </form>
+    </main>
+    <script>
+
+        var M1=document.getElementById("m1");
+        var M2=document.getElementById("m2");
+        var M3=document.getElementById("m3");
+        var M4=document.getElementById("m4");
+    
+        M1.onmousemove=function(){
+          M1.style.backgroundColor="var(--div-color3)";
+          M1.style.color="var(--div-color4)";
+        }
+        M1.onmouseout=function(){
+          M1.style.backgroundColor="";
+          M1.style.color="var(--div-color1)";
+        }
+        M2.onmousemove=function(){
+          M2.style.backgroundColor="var(--div-color3)";
+          M2.style.color="var(--div-color4)";
+        }
+        M2.onmouseout=function(){
+          M2.style.backgroundColor="";
+          M2.style.color="var(--div-color1)";
+        }
+        M3.onmousemove=function(){
+          M3.style.backgroundColor="var(--div-color3)";
+          M3.style.color="var(--div-color4)";
+        }
+        M3.onmouseout=function(){
+          M3.style.backgroundColor="";
+          M3.style.color="var(--div-color1)";
+        }
+        M4.onmousemove=function(){
+          M4.style.backgroundColor="var(--div-color3)";
+          M4.style.color="var(--div-color4)";
+        }
+        M4.onmouseout=function(){
+          M4.style.backgroundColor="";
+          M4.style.color="var(--div-color1)";
+        }
+    
+        /* Above javascript code must include all tha page.don't change the code.*/
+       </script>
+</body>
+</html>
