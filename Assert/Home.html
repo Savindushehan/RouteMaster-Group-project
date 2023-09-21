@@ -7,8 +7,10 @@
     <style>
 
         :root{
-            --div-color1:000000;
-            --div-color2:272702;
+            --div-color1:#000000;
+            --div-color2:#272702;
+            --div-color3:#07FAFA;
+            --div-color4:#FFFFFF;	
         }
         a{
             text-decoration: none;
@@ -32,6 +34,9 @@
             font-size:1rem;
             margin-right: 3rem;
             cursor: grab;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            outline: none;
         }
 
         /* above css code is all page must include code.do not chnage this code.*/
@@ -58,5 +63,47 @@
    <main>
     <h1>RouteMaster</h1>
    </main> 
+   <script>
+
+    var M1=document.getElementById("m1");
+    var M2=document.getElementById("m2");
+    var M3=document.getElementById("m3");
+    var M4=document.getElementById("m4");
+
+    M1.onmousemove=function(){
+      M1.style.backgroundColor="var(--div-color3)";
+      M1.style.color="var(--div-color4)";
+    }
+    M1.onmouseout=function(){
+      M1.style.backgroundColor="";
+      M1.style.color="var(--div-color1)";
+    }
+    M2.onmousemove=function(){
+      M2.style.backgroundColor="var(--div-color3)";
+      M2.style.color="var(--div-color4)";
+    }
+    M2.onmouseout=function(){
+      M2.style.backgroundColor="";
+      M2.style.color="var(--div-color1)";
+    }
+    M3.onmousemove=function(){
+      M3.style.backgroundColor="var(--div-color3)";
+      M3.style.color="var(--div-color4)";
+    }
+    M3.onmouseout=function(){
+      M3.style.backgroundColor="";
+      M3.style.color="var(--div-color1)";
+    }
+    M4.onmousemove=function(){
+      M4.style.backgroundColor="var(--div-color3)";
+      M4.style.color="var(--div-color4)";
+    }
+    M4.onmouseout=function(){
+      M4.style.backgroundColor="";
+      M4.style.color="var(--div-color1)";
+    }
+
+    /* Above javascript code must include all tha page.don't change the code.*/
+   </script>
 </body>
 </html>
