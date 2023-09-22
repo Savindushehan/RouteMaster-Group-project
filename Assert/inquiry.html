@@ -6,30 +6,30 @@
     <title>RouteMaster</title>
     <style>
         @font-face {
-        font-family: 'Roboto-Light'; /* Font family name */
-        src: url('/Fonts/Roboto-Light.ttf') format('truetype'); /* URL to your font file */
-        font-weight: normal;
-        font-style: italic;
-        }
-        @font-face {
-        font-family: 'Raleway-Light'; /* Font family name */
-        src: url('/Fonts/Raleway-Light.ttf') format('truetype'); /* URL to your font file */
-        font-weight: normal;
-        font-style: italic;
-        }
-        @font-face {
-        font-family: 'Roboto-Bold'; /* Font family name */
-        src: url('/Fonts/Roboto-Bold.ttf') format('truetype'); /* URL to your font file */
-        font-weight: normal;
-        font-style: italic;
-        }
-        :root{
-            --div-color1:#000000;
-            --div-color2:#272702;
-            --div-color3:#07FAFA;
-            --div-color4:#FFFFFF;	
-        }
-        a{
+       font-family: 'Roboto-Light'; /* Font family name */
+       src: url('/Fonts/Roboto-Light.ttf') format('truetype'); /* URL to your font file */
+       font-weight: normal;
+       font-style: italic;
+       }
+       @font-face {
+       font-family: 'Raleway-Light'; /* Font family name */
+       src: url('/Fonts/Raleway-Light.ttf') format('truetype'); /* URL to your font file */
+       font-weight: normal;
+       font-style: italic;
+       }
+       @font-face {
+       font-family: 'Roboto-Bold'; /* Font family name */
+       src: url('/Fonts/Roboto-Bold.ttf') format('truetype'); /* URL to your font file */
+       font-weight: normal;
+       font-style: italic;
+       }
+       :root{
+           --div-color1:#000000;
+           --div-color2:#272702;
+           --div-color3:#07FAFA;
+           --div-color4:#FFFFFF;	
+       }
+       a{
             text-decoration: none;
         }
         body{
@@ -40,7 +40,7 @@
             background-repeat: no-repeat;
             background-position: center;
             height: 100vh;
-            
+            overflow: hidden;
         }
         body::before {
           content: "";
@@ -75,34 +75,25 @@
         form{
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          width: 50rem;
+         justify-content: center;
+          width: 30rem;
           margin-left: auto;
           margin-right: auto;
         }
-        .row1,.row2,.row3{
+        .row1,.row2{
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           justify-content: center;
-          width: 40rem;
-          margin-left: auto;
-          margin-right: auto;
+          width: 15rem;
+         margin-left: 4rem;
+        
+         margin-right: auto;
           margin-bottom: 1rem;
-        }
-        .colomn1{
-            display: flex;
-            flex-direction: column;
-            margin-right: 5rem;
-        }
-        .colomn2{
-            display: flex;
-            flex-direction: column;
         }
         input{
           font-size: 0.9rem;
           font-family: 'Raleway-Light'; 
-          width: 15rem;
+          width: 20rem;
           outline: none;
           padding-left: 1rem;
           padding-top: 0.4rem;
@@ -110,6 +101,10 @@
           border-radius: 5px;
           border: 2px solid red;
           border: none;
+         
+        }
+        #description{
+            height: 5rem;
         }
         h2{
           font-size: 1.2rem;
@@ -135,9 +130,9 @@
           outline: none;
           cursor: pointer;
           margin-top: 2rem;
+          margin-left: 4rem;
         }
-
-        </style>
+       </style>
 </head>
 <body>
     <header>
@@ -149,45 +144,19 @@
         </div>
     </header>
     <main>
-        <h1>Create Account</h1>
+        <h1>Inquiry</h1>
         <form>
             <div class="row1">
-                <div class="colomn1">
-                    <h2>First Name</h2>
-                    <input type="text" placeholder="FirstName" id="firstname" name="firstname">
-                    <span id="e1">Can't Empty</span>
-                </div>
-                <div class="colomn2">
-                    <h2>Last Name</h2>
-                    <input type="text" placeholder="LastNamer" id="lastname" name="lastname">
-                    <span id="e2">Can't Empty</span>
-                </div>
+            <h2>Inquiry title</h2>
+            <input type="text" id="title" name="title" placeholder="title">
+            <span id="e1">Can't empty</span>
             </div>
             <div class="row2">
-                <div class="colomn1">
-                    <h2>Phone</h2>
-                    <input type="text" placeholder="Phone" id="phone" name="phone">
-                    <span id="e3">Can't Empty</span>
-                </div>
-                <div class="colomn2">
-                    <h2>Email</h2>
-                    <input type="text" placeholder="Email" id="email" name="email">
-                    <span id="e4">Can't Empty</span>
-                </div>
+                <h2>Inquiry description</h2>
+                <input type="text" id="description" name="description" placeholder="description">
+                <span id="e2">Can't empty</span>
+                <button id="btn">Submit</button>
             </div>
-            <div class="row3">
-                <div class="colomn1">
-                    <h2>Username</h2>
-                    <input type="text" placeholder="Username" id="username" name="username">
-                    <span id="e5">Can't Empty</span>
-                </div>
-                <div class="colomn2">
-                    <h2>Password</h2>
-                    <input type="text" placeholder="Password" id="password" name="password">
-                    <span id="e6">Can't Empty</span>
-                </div>
-            </div>
-            <button id="btn">Submt</button>
         </form>
     </main>
     <script>
