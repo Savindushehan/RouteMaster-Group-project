@@ -29,6 +29,7 @@
        --div-color2:#272702;
        --div-color3:#07FAFA;
        --div-color4:#FFFFFF;	
+       --div-color5:#4CBB17;	
    }
    a{
         text-decoration: none;
@@ -76,11 +77,58 @@
         h2{
             font-family: 'Raleway-Light'; 
             font-size: 1.2rem;  
+            text-align: center;
+
         }
         span{
             font-family: 'Raleway-Light'; 
-            border: 2px solid red;
+            width: 2.5rem !important;
+            padding-top: 0.5rem;
+            padding-bottom:0.5rem ;
+            text-align: center;
+            background-color: var(--div-color4);
+            border-radius: 5px;
+            cursor: pointer;
         }
+        .row{
+            display: flex;
+            width: 90%;
+            justify-content: space-around;
+            margin-left: auto;
+            margin-right:auto ;
+        }
+        .row1,.row2,.row3,.row4{
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+        }
+       h4{
+            font-family: 'Roboto-Light';
+            font-size: 1rem;
+       }
+       .column1,.column2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+       }
+       button{
+        font-family: 'Raleway-Light';
+        font-size: 1rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-radius: 10px;
+        background-color: var(--div-color5);
+        color: var(--div-color4);
+        border: none;
+        outline: none;
+        cursor: pointer;
+       }
     </style>
 <body>
     <header>
@@ -94,7 +142,7 @@
     <main>
         <h1>Select Seats & Fill Form</h1>
         <div class="row">
-            <dov class="colomn1">
+            <dov class="column1">
                 <h2>Front</h2>
                 <div class="row1">
                     <span id="b1">1</span>
@@ -116,12 +164,12 @@
                 </div>
                 <div class="row4">
                     <span id="b13">13</span>
-                    <span id="b14">12</span>
-                    <span id="b15">13</span>
-                    <span id="b6">14</span>
+                    <span id="b14">14</span>
+                    <span id="b15">15</span>
+                    <span id="b6">16</span>
                 </div>
             </dov>
-            <div class="colomn2">
+            <div class="column2">
                 <h2>Seats Details</h2>
                 <h4 id="s">Seats</h4>
                 <h4 id="t">Total</h4>
@@ -129,5 +177,59 @@
             </div>
         </div>
     </main>
+    <script>
+
+        var M1=document.getElementById("m1");
+        var M2=document.getElementById("m2");
+        var M3=document.getElementById("m3");
+        var M4=document.getElementById("m4");
+        var BTN=document.getElementById("btn");
+        
+
+
+    
+        M1.onmousemove=function(){
+          M1.style.backgroundColor="var(--div-color3)";
+          M1.style.color="var(--div-color4)";
+        }
+        M1.onmouseout=function(){
+          M1.style.backgroundColor="";
+          M1.style.color="var(--div-color1)";
+        }
+        M2.onmousemove=function(){
+          M2.style.backgroundColor="var(--div-color3)";
+          M2.style.color="var(--div-color4)";
+        }
+        M2.onmouseout=function(){
+          M2.style.backgroundColor="";
+          M2.style.color="var(--div-color1)";
+        }
+        M3.onmousemove=function(){
+          M3.style.backgroundColor="var(--div-color3)";
+          M3.style.color="var(--div-color4)";
+        }
+        M3.onmouseout=function(){
+          M3.style.backgroundColor="";
+          M3.style.color="var(--div-color1)";
+        }
+        M4.onmousemove=function(){
+          M4.style.backgroundColor="var(--div-color3)";
+          M4.style.color="var(--div-color4)";
+        }
+        M4.onmouseout=function(){
+          M4.style.backgroundColor="";
+          M4.style.color="var(--div-color1)";
+        }
+        /* Above javascript code must include all tha page.don't change the code.*/
+       BTN.onmousemove=function(){
+            BTN.style.backgroundColor="var(--div-color3)";
+            BTN.style.color="var(--div-color1)";
+       }
+       BTN.onmouseout=function(){
+            BTN.style.backgroundColor="var(--div-color5)";
+            BTN.style.color="var(--div-color4)";
+       }
+      
+       </script>
 </body>
 </html>
