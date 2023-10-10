@@ -1,0 +1,41 @@
+package com.user;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+
+public class loginNewSevlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String Username=request.getParameter("usename");//form input name
+		String Passowrd=request.getParameter("password");//form input password
+		
+		
+		
+		try {
+			List<RegisterUser> regDetails=RegisteruserDButy.validate(Username, Passowrd);//above string code 
+			request.setAttribute("regDetails", regDetails);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		String profile=request.getParameter("profile");
+		
+		if("profile".equals(profile)) {
+			
+			RequestDispatcher dis = (RequestDispatcher) request.getRequestDispatcher("Profile.jsp");
+			dis.forward(request,response);
+		}
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+}

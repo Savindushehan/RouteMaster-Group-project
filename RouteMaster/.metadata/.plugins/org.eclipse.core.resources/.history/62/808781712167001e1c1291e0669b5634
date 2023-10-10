@@ -1,0 +1,70 @@
+package com.user;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String Username=request.getParameter("usename");//form input name
+		String Password=request.getParameter("password");//form input password
+		String u1="abc";
+		String p1="abc";
+
+		
+		
+		try {
+			List<RegisterUser> regDetails=RegisteruserDButy.validate(Username, Password);//above string code 
+			request.setAttribute("regDetails", regDetails);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		String profile=request.getParameter("profile");
+		
+		if("profile".equals(profile)) {
+			String username = (String) request.getAttribute("myU1");
+			String password = (String) request.getAttribute("myU1");
+
+			try {
+				List<RegisterUser> regDetails=RegisteruserDButy.validate(username,password);//above string code 
+				request.setAttribute("regDetails", regDetails);
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			RequestDispatcher dis = (RequestDispatcher) request.getRequestDispatcher("Profile.jsp");
+			dis.forward(request,response);
+			
+		}else {
+			String U1=Username;
+			request.setAttribute("U1",U1);
+			RequestDispatcher d1 = (RequestDispatcher) request.getRequestDispatcher("Value.jsp");
+			d1.forward(request,response);
+			String P1=Password;
+			request.setAttribute("P1",P1);
+			RequestDispatcher d2 = (RequestDispatcher) request.getRequestDispatcher("Value.jsp");
+			d2.forward(request,response);
+			
+			RequestDispatcher dis = (RequestDispatcher) request.getRequestDispatcher("MainHome.jsp");
+			dis.forward(request,response);
+			
+		
+		}
+			
+		
+		
+	}
+
+}
