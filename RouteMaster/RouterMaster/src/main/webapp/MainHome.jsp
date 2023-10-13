@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -148,9 +148,6 @@
 String attr1 = (String) request.getAttribute("U1");
 String attr2 = (String) request.getAttribute("P1");
 %>
-<p>value 1: <%= attr1 %></p>
-<p>value 2: <%= attr2 %></p>
-
 
     <header>
         <div class="head">
@@ -162,12 +159,60 @@ String attr2 = (String) request.getAttribute("P1");
     </header>
     <main>
  <form action="log" method="Get">
+ 
+   <c:forEach var="cus" items="${regDetails}">
+        
+        <c:set var="RID" value="${cus.getRID()}"/>
+        <c:set var="F_name" value="${cus.getFirst_Name()}"/>
+        <c:set var="L_name" value="${cus.getLast_Name()}"/>
+        <c:set var="Phone" value="${cus.getPhone()}"/>
+        <c:set var="Username" value=" ${cus.getUsername()}"/>
+        <c:set var="Password" value="${cus.getPassword()}"/>
+        
+      <input type="hidden" name="RID" value="${cus.getRID()}">
+      
+ 
+ 
+ 
+ 
+ 
    <input type="hidden" name="U1" value="<%= attr1 %>">
     <input type="hidden" name="P1" value="<%= attr2 %>">
     
+      <div class="row1">
+            <button id="s1" name="feedback" value="feedback">FEEDBACK</button>
+            <span id="s2" name="inquiry">INQUIRY</span>
+            <span id="s3" name="viewinquiry">VIEW INQUIRY</span>
+        </div>
+       <div class="row2">
+       
+		<button id="s4" name="ticket" value="ticket">VIEW ADD TICKETS</button>
+		
+		
+   		 <span id="s5" name="viewfeedback">VIEW ADD FEEDBACK</span>
         <button id="s6" name="profile" value="profile">VIEW PROFILE</button>
+	</div>
+       
+     
+            <div class="row3">
+                <div class="colomn1">
+                     <h2>FROM</h2>
+                    <input type="text" id="from" name="from" placeholder="From">
+                </div>
+                <div class="colomn2">
+                    <h2>TO</h2>
+                    <input type="text" id="to" name="to" placeholder="To">
+                </div>
+                <div class="colomn3">
+                    <h2>JOURNEY DATE</h2>
+                    <input type="date" id="date" name="date">
+                </div>
+            </div>
+            <button id="btn" name="btn" value="btn">Find Buses</button>
  
 </form>
+      </c:forEach>
+
  
     </main>
     

@@ -76,4 +76,54 @@
     <servlet-name>feedbackServlet</servlet-name>
     <url-pattern>/feedbackServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FeedbackinsertServlet</display-name>
+    <servlet-name>FeedbackinsertServlet</servlet-name>
+    <servlet-class>com.user.FeedbackinsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FeedbackinsertServlet</servlet-name>
+    <url-pattern>/FeedbackinsertServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BookingServlet</display-name>
+    <servlet-name>BookingServlet</servlet-name>
+    <servlet-class>com.user.BookingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookingServlet</servlet-name>
+    <url-pattern>/BookingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>NewBookingServlet</display-name>
+    <servlet-name>NewBookingServlet</servlet-name>
+    <servlet-class>com.user.NewBookingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewBookingServlet</servlet-name>
+    <url-pattern>/NewBookingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deleteBookingServlet</display-name>
+    <servlet-name>deleteBookingServlet</servlet-name>
+    <servlet-class>com.user.deleteBookingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteBookingServlet</servlet-name>
+    <url-pattern>/deleteBookingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateBookingServlet</display-name>
+    <servlet-name>UpdateBookingServlet</servlet-name>
+    <servlet-class>com.user.UpdateBookingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateBookingServlet</servlet-name>
+    <url-pattern>/UpdateBookingServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,0 +1,42 @@
+package com.user;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+public class BookingServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		String Seats=request.getParameter("seats");
+		String Total=request.getParameter("total");
+		String RID=request.getParameter("RID");
+		String venue=request.getParameter("venue");
+		String destination=request.getParameter("destination");
+		String date=request.getParameter("date");
+			
+		
+		 try {
+			 List<Ticket> TicDetails= TicketBookingutill.validate(RID);
+				request.setAttribute("TicDetails", TicDetails);
+				   
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    }
+
+		
+		RequestDispatcher dis = (RequestDispatcher) request.getRequestDispatcher("Ticket.jsp");
+		dis.forward(request,response);
+
+		
+	}
+
+}

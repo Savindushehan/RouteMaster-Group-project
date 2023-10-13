@@ -127,10 +127,18 @@
         </div>
     </header>
     <main>
+    
         <h1>Feedback</h1>
-        <form>
+        <form action="FeedbackinsertServlet" method="Get">
             <input type="text" name="feedback" id="feedback">
-            <button id="btn">Submit</button>
+           
+            <c:forEach var="cus" items="${regDetails}">
+        
+        <c:set var="RID" value="${cus.getRID()}"/>
+        
+          <input type="hidden" name="R1" value="${RID}">
+            <button id="btn" name="btn">Submit</button>
+              </c:forEach>
         </form>
     </main>
     <script>

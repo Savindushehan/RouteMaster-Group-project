@@ -30,29 +30,13 @@ public class LoginServlet extends HttpServlet {
 		
 		
 		String profile=request.getParameter("profile");
+		String feedback=request.getParameter("feedback");
+		String btn=request.getParameter("btn");
+		String ticket=request.getParameter("ticket");
+
+		
 		if ("profile".equals(profile)) {
-			/*
-		    String attr1 = request.getParameter("attr1");
-		    String attr2 = request.getParameter("attr2");
-		    *
-		   /* 
-		   try {
-		        List<RegisterUser> regDetails = RegisteruserDButy.validate(attr1,attr2);
-		        request.setAttribute("regDetails", regDetails);
-		        
-		        // Forward to the "Profile.jsp" page
-		        RequestDispatcher dis = request.getRequestDispatcher("Profile.jsp");
-		        dis.forward(request, response);
-		    } catch (Exception e) {
-		        e.printStackTrace();
-		    }
-		    */
-			/*
-		    RequestDispatcher dis = request.getRequestDispatcher("Profile.jsp?attr1=" + attr1);
-            dis.forward(request, response);
-            */
 			
-			// Replace the following lines with your dynamic logic or user input retrieval
 			  String dynamicValue1 = request.getParameter("U1");
 			    String dynamicValue2 = request.getParameter("P1");
 
@@ -71,8 +55,74 @@ public class LoginServlet extends HttpServlet {
 			    }
 
 		    
+		}else if("feedback".equals(feedback)) {
+			
+
+			  String dynamicValue1 = request.getParameter("U1");
+			    String dynamicValue2 = request.getParameter("P1");
+
+			request.setAttribute("attr1", dynamicValue1);
+			request.setAttribute("attr2", dynamicValue2);
+
+			 try {
+			        List<RegisterUser> regDetails = RegisteruserDButy.validate(dynamicValue1,dynamicValue2);
+			        request.setAttribute("regDetails", regDetails);
+			        
+			        // Forward to the "Profile.jsp" page
+			        RequestDispatcher dis = request.getRequestDispatcher("Feedback.jsp");
+			        dis.forward(request, response);
+			    } catch (Exception e) {
+			        e.printStackTrace();
+			    }
+		}else if("btn".equals(btn)) {
+			  String dynamicValue1 = request.getParameter("U1");
+			    String dynamicValue2 = request.getParameter("P1");
+			    String dynamicValue3=request.getParameter("from");
+			    String dynamicValue4=request.getParameter("to");
+			    String dynamicValue5=request.getParameter("date");
+
+			request.setAttribute("attr1", dynamicValue1);
+			request.setAttribute("attr2", dynamicValue2);
+			request.setAttribute("attr3", dynamicValue3);
+			request.setAttribute("attr4", dynamicValue4);
+			request.setAttribute("attr5", dynamicValue5);
+
+			
+			 try {
+			        List<RegisterUser> regDetails = RegisteruserDButy.validate(dynamicValue1,dynamicValue2);
+			        request.setAttribute("regDetails", regDetails);
+			        
+			        RequestDispatcher dis = request.getRequestDispatcher("Bus.jsp");
+			        dis.forward(request, response);
+			    } catch (Exception e) {
+			        e.printStackTrace();
+			    }
+
+		
 		}
-		else {
+		else if("ticket".equals(ticket)) {
+			  String dynamicValue1 = request.getParameter("U1");
+			    String dynamicValue2 = request.getParameter("P1");
+		    String dynamicValue6=request.getParameter("RID");
+			request.setAttribute("attr1", dynamicValue1);
+			request.setAttribute("attr2", dynamicValue2);
+		
+		    
+		    
+			request.setAttribute("attr3", dynamicValue6);
+			
+			 try {
+			        List<RegisterUser> regDetails = RegisteruserDButy.validate(dynamicValue1,dynamicValue2);
+			        request.setAttribute("regDetails", regDetails);
+			        
+			        RequestDispatcher dis = request.getRequestDispatcher("BeforeTicket.jsp");
+			        dis.forward(request, response);
+			    } catch (Exception e) {
+			        e.printStackTrace();
+			    }
+
+
+		}else {
 			
 			String U1=Username;
 			String P1=Password;

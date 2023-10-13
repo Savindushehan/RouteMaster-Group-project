@@ -1,0 +1,43 @@
+package com.user;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+@WebServlet("/UpdateBookingServlet")
+public class UpdateBookingServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.getWriter().append("Served at: ").append(request.getContextPath());
+
+        String FID = request.getParameter("FID"); // Make sure parameter names match your HTML form
+        String RID = request.getParameter("RID"); // Make sure parameter names match your HTML form
+        String place = request.getParameter("place");
+        String venue = request.getParameter("venue"); // Make sure parameter names match your HTML form
+        String date = request.getParameter("date");
+        String seats = request.getParameter("seats");
+        String payment = request.getParameter("payment");
+
+        boolean isTrue;
+
+        // Assuming you have defined the TicketBookingutill class with a method like this
+        isTrue = TicketBookingutill.updateTicketDetails(FID, RID, place, venue, date, seats, payment);
+
+        if (isTrue) {
+            List<Ticket> ticDetails = TicketBookingutill.validate(FID);
+            request.setAttribute("TicDetails", ticDetails);
+
+            RequestDispatcher dis = request.getRequestDispatcher("Ticket.jsp");
+            dis.forward(request, response);
+        } else {
+            RequestDispatcher dis = request.getRequestDispatcher("MainHome.jsp");
+            dis.forward(request, response);
+        }
+    }
+}

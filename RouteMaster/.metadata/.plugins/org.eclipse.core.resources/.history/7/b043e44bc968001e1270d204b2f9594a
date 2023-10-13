@@ -1,0 +1,28 @@
+package com.user;
+
+public class Ticket extends RegisterUser {
+
+	private String Seats;
+	private String Total;
+	
+	public Ticket(int RID, String First_Name, String Last_Name, String phone2, String Username, String Password,String Seats,String Total) {
+		super(RID, First_Name, Last_Name, phone2, Username, Password);
+		this.Seats=Seats;
+		this.Total=Total;
+		
+	}
+
+	public String getSeats() {
+		return Seats;
+	}
+
+	
+	public String getTotal() {
+		return Total;
+	}
+    public int getRID() {
+        return super.getRID(); 
+    }
+
+
+}

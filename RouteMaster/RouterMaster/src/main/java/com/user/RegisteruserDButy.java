@@ -3,6 +3,7 @@ package com.user;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -194,6 +195,85 @@ public class RegisteruserDButy{
 		
 		return isSuccess;
 	}
+	
+	/*
+	public static boolean insertfeedback(String description,String RID) {
+		boolean isSuccess=false;
+		
+		try {
+			con = DBConnect.getConnection();
+			stmt=con.createStatement();
+			
+		String sql="insert into Feedback values(0,'"+description+"','"+RID+"')";
+		int rs=stmt.executeUpdate(sql);
+		
+		if(rs>0) {
+			isSuccess=true;
+		}else{
+			isSuccess=false;
+		}
+		
+		}catch(Exception e){
+			
+			e.printStackTrace();
+		}
+
+		return isSuccess;
+		
+	}
+	*/
+	
+	
+	public static boolean insertfeedback(String description, String RID) {
+	    boolean isSuccess = false;
+	    Connection con = null;
+	    PreparedStatement stmt = null;
+
+	    try {
+	        con = DBConnect.getConnection();
+	        con.setAutoCommit(false); // Disable auto-commit
+
+	        String sql = "INSERT INTO Feedback (description, RID) VALUES (?, ?)";
+	        stmt = (PreparedStatement) con.prepareStatement(sql);
+	        stmt.setString(1, description);
+	        stmt.setInt(2, Integer.parseInt(RID)); // Assuming RID is an integer
+
+	        int rowsInserted = stmt.executeUpdate();
+
+	        if (rowsInserted > 0) {
+	            isSuccess = true;
+	            con.commit(); // Commit the transaction
+	        } else {
+	            con.rollback(); // Rollback in case of failure
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        try {
+	            if (con != null) {
+	                con.rollback(); // Rollback in case of exception
+	            }
+	        } catch (SQLException ex) {
+	            ex.printStackTrace();
+	        }
+	    } finally {
+	        try {
+	            if (stmt != null) {
+	                stmt.close();
+	            }
+	            if (con != null) {
+	                con.close();
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+
+	    return isSuccess;
+	}
+
+
+	
+	
 
 	
 	

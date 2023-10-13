@@ -1,0 +1,49 @@
+package com.user;
+
+public class Ticket extends RegisterUser {
+	private int Ticket_ID;
+	private String place;
+	private String visit;
+	private String date;
+	private String SeatNO;
+	private String Payment;
+	
+	public Ticket(int RID, String First_Name, String Last_Name, String phone2, String Username, String Password,String Place,String visit,String date,String SeatNO,String Payment,int Ticket_ID) {
+		super(RID, First_Name, Last_Name, phone2, Username, Password);
+		this.Payment=Payment;
+		this.date=date;
+		this.visit=visit;
+		this.SeatNO=SeatNO;
+		this.Ticket_ID=Ticket_ID;
+		this.place=place;
+	}
+    public int getTicket_ID() {
+		return Ticket_ID;
+	}
+	
+	public String getPlace() {
+		return place;
+	}
+	
+	public String getVisit() {
+		return visit;
+	}
+
+	public String getDate() {
+		return date;
+	}
+	
+	public String getSeatNO() {
+		return SeatNO;
+	}
+
+	public String getPayment() {
+		return Payment;
+	}
+	public int getRID() {
+        return super.getRID(); 
+    }
+   
+
+
+}
