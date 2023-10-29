@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<main>
+  <c:forEach var="cus" items="${regDetails}">
+        
+        <c:set var="RID" value="${cus.getRID()}"/>
+        <c:set var="F_name" value="${cus.getFirst_Name()}"/>
+        <c:set var="L_name" value="${cus.getLast_Name()}"/>
+        
+        
+        
+                </c:forEach>
+        
+</main>
+
+</body>
+</html>

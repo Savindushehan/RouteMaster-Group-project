@@ -1,0 +1,9 @@
+package com.user;
+
+public class Inquiry {
+
+	public Inquiry() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

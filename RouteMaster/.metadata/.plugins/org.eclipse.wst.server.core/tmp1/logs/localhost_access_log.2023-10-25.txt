@@ -1,0 +1,5 @@
+127.0.0.1 - - [25/Oct/2023:09:23:17 +0530] "GET / HTTP/1.1" 404 752
+127.0.0.1 - - [25/Oct/2023:09:23:20 +0530] "GET /RouterMaster/MainHome.jsp HTTP/1.1" 200 8441
+127.0.0.1 - - [25/Oct/2023:09:23:20 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+127.0.0.1 - - [25/Oct/2023:09:23:25 +0530] "GET /RouterMaster/login.jsp HTTP/1.1" 200 6837
+127.0.0.1 - - [25/Oct/2023:09:23:30 +0530] "GET /RouterMaster/log?usename=Savindu&password=Savi1234 HTTP/1.1" 200 10037
