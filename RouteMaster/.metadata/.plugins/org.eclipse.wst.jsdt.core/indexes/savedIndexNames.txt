@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+F:\RouteMaster\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-4166324153.index
-2983374908.index
-3439502331.index
-4168113927.index
-1251793662.index
-1721732801.index
-77651616.index
